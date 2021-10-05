@@ -76,8 +76,8 @@ function newsFeed(){
     }
 
     template = template.replace(`{{__news_feed__}}`,newsList.join(''));
-    template = template.replace(`{{__prev_page__}}`,store.currentPage > 1 ? store.currentPage-1 : 1);
-    template = template.replace(`{{__next_page__}}`,store.currentPage+1);
+    template = template.replace(`{{__prev_page__}}`,store.currentPage > 1 ? String(store.currentPage-1) : String(1));
+    template = template.replace(`{{__next_page__}}`,String(store.currentPage+1));
     container.innerHTML = template;
 }
 
